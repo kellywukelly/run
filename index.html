@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宜蘭地區南海海槽地震逃生指南</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .alert-banner {
+            background-color: #f39c12;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .intro {
+            background-color: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .evacuation-routes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .route-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .route-card h3 {
+            color: #e74c3c;
+            margin-top: 0;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        .map-container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .map-placeholder {
+            background-color: #eee;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+        .tips {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tips h2 {
+            color: #e74c3c;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        .tips ul {
+            padding-left: 1.5rem;
+        }
+        .tips li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        .emergency-contacts {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .emergency-contacts h2 {
+            color: #e74c3c;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .contact-item {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+        .contact-item h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .contact-item p {
+            margin: 0;
+            font-weight: bold;
+        }
+        .tsunami-warning {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>宜蘭地區南海海槽地震逃生指南</h1>
+        <p>2025年7月5日地震應變與疏散路線</p>
+    </header>
+    
+    <div class="alert-banner">
+        此為重要防災資訊，請詳閱並與家人共同準備應變計畫
+    </div>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>關於南海海槽地震</h2>
+            <p>南海海槽是台灣東部海域重要的地震帶之一，若發生大規模地震，宜蘭地區可能面臨強烈搖晃及海嘯威脅。本網頁提供宜蘭縣各鄉鎮市區民眾在地震發生時的緊急疏散路線與安全避難資訊。</p>
+            
+            <div class="tsunami-warning">
+                <h3>⚠️ 海嘯警告</h3>
+                <p>南海海槽地震可能引發海嘯！若您在沿海地區，感受到強烈搖晃後，請立即往高處撤離，不要等待海嘯警報。海嘯可能在地震後數分鐘內到達。</p>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <h2>宜蘭縣避難地圖總覽</h2>
+            <div class="map-placeholder">
+                <p>【宜蘭縣避難路線地圖 - 請點擊下方連結查看詳細地圖】</p>
+            </div>
+            <p>請根據您所在的鄉鎮市區，查看相應的疏散路線。請務必在平時熟悉多條逃生路線，地震發生時才能迅速判斷最安全的撤離方向。</p>
+        </div>
+        
+        <h2>各鄉鎮市區疏散路線</h2>
+        <div class="evacuation-routes">
+            <div class="route-card">
+                <h3>宜蘭市</h3>
+                <p><strong>主要避難場所：</strong>宜蘭運動公園、宜蘭高中操場、宜蘭國小操場</p>
+                <p><strong>沿海疏散路線：</strong></p>
+                <ul>
+                    <li>梅洲里、黎明里居民：沿梅洲路、黎明路往宜蘭市區方向撤離，前往宜蘭高中避難場所</li>
+                    <li>新生里居民：沿新生路、宜蘭路往北撤離至宜蘭運動公園</li>
+                </ul>
+                <p><strong>市區疏散路線：</strong>就近前往開闊空間（如公園、學校操場），避開高樓、橋梁及危險建築物</p>
+            </div>
+            
+            <div class="route-card">
+                <h3>頭城鎮</h3>
+                <p><strong>主要避難場所：</strong>頭城國中操場、頭城國小操場、竹安國小操場、頭城運動公園</p>
+                <p><strong>沿海疏散路線：</strong></p>
+                <ul>
+                    <li>大溪里、外澳里居民：沿台2線往內陸方向撤離至頭城國中</li>
+                    <li>港口里居民：沿宜23鄉道往南撤離至竹安國小</li>
+                    <li>頭城市區居民：就近前往頭城國小操場或頭城運動公園</li>
+                </ul>
+                <p><strong>注意事項：</strong>台2線沿海路段可能有落石危險，請避開懸崖峭壁區域</p>
+            </div>
+            
+            <div class="route-card">
+                <h3>礁溪鄉</h3>
+                <p><strong>主要避難場所：</strong>礁溪國中操場、礁溪國小操場、四結國小操場</p>
+                <p><strong>疏散路線：</strong></p>
+                <ul>
+                    <li>市區居民：就近前往礁溪國中或礁溪國小操場</li>
+                    <li>林美村、玉光村居民：避開林美溪，沿台9線往市區方向撤離</li>
+                    <li>二龍村居民：沿宜5鄉道往南撤離</li>
+                </ul>
+                <p><strong>注意事項：</strong>溫泉區地震後可能有熱水溢流，請特別小心</p>
+            </div>
+            
+            <div class="route-card">
+                <h3>羅東鎮</h3>
+                <p><strong>主要避難場所：</strong>羅東運動公園、羅東高中操場、羅東國中操場</p>
+                <p><strong>疏散路線：</strong></p>
+                <ul>
+                    <li>市區居民：就近前往羅東運動公園或學校操場</li>
+                    <li>北成里、成功里居民：沿北成路、純精路向西撤離至羅東運動公園</li>
+                    <li>東安里居民：沿復興路向西撤離至羅東國中</li>
+                </ul>
+                <p><strong>注意事項：</strong>避開羅東夜市商圈狹窄巷道，選擇寬敞道路撤離</p>
+            </div>
+            
+            <div class="route-card">
+                <h3>蘇澳鎮</h3>
+                <p><strong>主要避難場所：</strong>蘇澳國中操場、蘇澳國小操場、武荖國小操場、南安國中操場</p>
+                <p><strong>沿海疏散路線：</strong></p>
+                <ul>
+                    <li>南方澳居民：立即往高處撤離，可沿豆腐岬登山步道或漁港路往北方高地撤離</li>
+                    <li>蘇南里、南強里居民：沿海邊路往內陸方向撤離至蘇澳國中</li>
+                    <li>港邊里居民：避開港區，沿台2線往內陸方向撤離</li>
+                </ul>
+                <p><strong>重要警告：</strong>南方澳漁港為高度海嘯風險區，請立即往高處撤離，不要停留在低窪地區</p>
+            </div>
+            
+            <div class="route-card">
+                <h3>冬山鄉</h3>
+                <p><strong>主要避難場所：</strong>冬山國中操場、冬山國小操場、東興國小操場</p>
+                <p><strong>疏散路線：</strong></p>
+                <ul>
+                    <li>冬山市區居民：就近前往冬山國中或冬山國小操場</li>
+                    <li>丸山村居民：沿宜52鄉道往北撤離</li>
+                    <li>大進村、武淵村居民：沿宜29鄉道向西撤離，避開低窪地區</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h2>地震發生時的應變要領</h2>
+            <ul>
+                <li><strong>室內：</strong>就地掩蔽，躲在桌下或堅固家具旁，保護頭部，抓住桌腳。地震停止後再撤離。</li>
+                <li><strong>室外：</strong>遠離建築物、電線桿和招牌，到空曠處避難。</li>
+                <li><strong>沿海地區：</strong>若感受到強烈搖晃，不要等待海嘯警報，立即往內陸高處撤離。</li>
+                <li><strong>開車中：</strong>減速靠邊停車，避開橋梁、高架道路及電線桿，熄火後開啟車門打開車窗（避免車門變形被困），離開車輛到安全地點。</li>
+                <li><strong>避免電梯：</strong>使用樓梯撤離，不要搭乘電梯。</li>
+                <li><strong>準備緊急包：</strong>應含3日飲用水、乾糧、手電筒、收音機、備用電池、常用藥品、現金等。</li>
+            </ul>
+        </div>
+        
+        <div class="emergency-contacts">
+            <h2>緊急聯絡資訊</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>緊急報案</h4>
+                    <p>110</p>
+                </div>
+                <div class="contact-item">
+                    <h4>消防救護</h4>
+                    <p>119</p>
+                </div>
+                <div class="contact-item">
+                    <h4>宜蘭縣災害應變中心</h4>
+                    <p>03-9251000</p>
+                </div>
+                <div class="contact-item">
+                    <h4>宜蘭縣消防局</h4>
+                    <p>03-9324101</p>
+                </div>
+                <div class="contact-item">
+                    <h4>宜蘭縣警察局</h4>
+                    <p>03-9320900</p>
+                </div>
+                <div class="contact-item">
+                    <h4>宜蘭醫院</h4>
+                    <p>03-9325192</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>本資訊由宜蘭縣政府災害防救辦公室提供 | 更新日期：2025年3月15日</p>
+        <p>若有疑問，請聯絡：03-9251000 #1234</p>
+    </footer>
+</body>
+</html>
