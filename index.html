@@ -56,6 +56,20 @@
             border-bottom: 2px solid #f39c12;
             padding-bottom: 0.5rem;
         }
+        .altitude-info {
+            background-color: #e8f4fc;
+            padding: 0.5rem;
+            border-left: 3px solid #3498db;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .resource-info {
+            background-color: #e8fcf0;
+            padding: 0.5rem;
+            border-left: 3px solid #2ecc71;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
         .map-container {
             background-color: #fff;
             border-radius: 5px;
@@ -90,6 +104,52 @@
         }
         .tips li {
             margin-bottom: 0.5rem;
+        }
+        .altitude-legend {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .altitude-legend h2 {
+            color: #e74c3c;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        .altitude-scale {
+            display: flex;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+        .altitude-scale div {
+            flex: 1;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .low {
+            background-color: #e74c3c;
+        }
+        .medium-low {
+            background-color: #e67e22;
+        }
+        .medium {
+            background-color: #f1c40f;
+            color: #333 !important;
+            text-shadow: none !important;
+        }
+        .medium-high {
+            background-color: #2ecc71;
+        }
+        .high {
+            background-color: #3498db;
         }
         footer {
             background-color: #333;
@@ -137,6 +197,30 @@
             border-radius: 5px;
             font-weight: bold;
         }
+        .resources-section {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .resources-section h2 {
+            color: #e74c3c;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .resource-item {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #2ecc71;
+        }
     </style>
 </head>
 <body>
@@ -152,12 +236,25 @@
     <div class="container">
         <div class="intro">
             <h2>關於南海海槽地震</h2>
-            <p>南海海槽是台灣東部海域重要的地震帶之一，若發生大規模地震，宜蘭地區可能面臨強烈搖晃及海嘯威脅。本網頁提供宜蘭縣各鄉鎮市區民眾在地震發生時的緊急疏散路線與安全避難資訊。</p>
+            <p>南海海槽是台灣東部海域重要的地震帶之一，若發生大規模地震，宜蘭地區可能面臨強烈搖晃及海嘯威脅。本網頁提供宜蘭縣各鄉鎮市區民眾在地震發生時的緊急疏散路線與安全避難資訊，並特別考量地形海拔與資源取得容易性。</p>
             
             <div class="tsunami-warning">
                 <h3>⚠️ 海嘯警告</h3>
                 <p>南海海槽地震可能引發海嘯！若您在沿海地區，感受到強烈搖晃後，請立即往高處撤離，不要等待海嘯警報。海嘯可能在地震後數分鐘內到達。</p>
             </div>
+        </div>
+        
+        <div class="altitude-legend">
+            <h2>宜蘭地區海拔高度與避難安全指標</h2>
+            <p>海嘯風險與海拔高度息息相關。一般而言，位於海拔30公尺以上區域可視為相對安全的避難位置。本指南以顏色標示不同海拔區域的安全程度：</p>
+            <div class="altitude-scale">
+                <div class="low">0-5m<br>極高風險</div>
+                <div class="medium-low">5-10m<br>高風險</div>
+                <div class="medium">10-20m<br>中風險</div>
+                <div class="medium-high">20-30m<br>低風險</div>
+                <div class="high">30m+<br>安全區</div>
+            </div>
+            <p style="margin-top: 1rem;">請注意：海嘯實際影響範圍會受地形、河川、海灣形狀等因素影響，本指標僅供參考。請以當地政府公告的避難地點為主要撤離目標。</p>
         </div>
         
         <div class="map-container">
@@ -173,71 +270,188 @@
             <div class="route-card">
                 <h3>宜蘭市</h3>
                 <p><strong>主要避難場所：</strong>宜蘭運動公園、宜蘭高中操場、宜蘭國小操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 市區平均海拔7-15公尺，西側較高，東側較低
+                </div>
                 <p><strong>沿海疏散路線：</strong></p>
                 <ul>
-                    <li>梅洲里、黎明里居民：沿梅洲路、黎明路往宜蘭市區方向撤離，前往宜蘭高中避難場所</li>
-                    <li>新生里居民：沿新生路、宜蘭路往北撤離至宜蘭運動公園</li>
+                    <li>梅洲里、黎明里居民：沿梅洲路、黎明路往宜蘭市區西側方向撤離，前往宜蘭高中避難場所（海拔約12公尺）</li>
+                    <li>新生里居民：沿新生路、宜蘭路往北撤離至宜蘭運動公園（海拔約15公尺）</li>
                 </ul>
                 <p><strong>市區疏散路線：</strong>就近前往開闊空間（如公園、學校操場），避開高樓、橋梁及危險建築物</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 市區資源充足，宜蘭運動公園、縣政中心周邊設有緊急物資儲備站，宜蘭醫院可提供醫療支援
+                </div>
             </div>
             
             <div class="route-card">
                 <h3>頭城鎮</h3>
                 <p><strong>主要避難場所：</strong>頭城國中操場、頭城國小操場、竹安國小操場、頭城運動公園</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 沿海地區多在5公尺以下，市區平均海拔5-10公尺，西側山區達30公尺以上
+                </div>
                 <p><strong>沿海疏散路線：</strong></p>
                 <ul>
-                    <li>大溪里、外澳里居民：沿台2線往內陸方向撤離至頭城國中</li>
-                    <li>港口里居民：沿宜23鄉道往南撤離至竹安國小</li>
-                    <li>頭城市區居民：就近前往頭城國小操場或頭城運動公園</li>
+                    <li>大溪里、外澳里居民：沿台2線往內陸方向撤離至頭城國中（海拔約15公尺）或往西南方向高地撤離</li>
+                    <li>港口里居民：沿宜23鄉道往南撤離至竹安國小（海拔約12公尺）</li>
+                    <li>頭城市區居民：就近前往頭城國小操場（海拔約8公尺）或向西側高地撤離</li>
                 </ul>
                 <p><strong>注意事項：</strong>台2線沿海路段可能有落石危險，請避開懸崖峭壁區域</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 頭城國中及頭城消防分隊設有物資儲備點，醫療資源較少，建議視情況前往宜蘭市區醫院
+                </div>
             </div>
             
             <div class="route-card">
                 <h3>礁溪鄉</h3>
                 <p><strong>主要避難場所：</strong>礁溪國中操場、礁溪國小操場、四結國小操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 市區平均海拔約10-20公尺，西側山區可達50公尺以上，東側較低平
+                </div>
                 <p><strong>疏散路線：</strong></p>
                 <ul>
-                    <li>市區居民：就近前往礁溪國中或礁溪國小操場</li>
-                    <li>林美村、玉光村居民：避開林美溪，沿台9線往市區方向撤離</li>
-                    <li>二龍村居民：沿宜5鄉道往南撤離</li>
+                    <li>市區居民：就近前往礁溪國中（海拔約18公尺）或礁溪國小操場（海拔約15公尺）</li>
+                    <li>林美村、玉光村居民：避開林美溪，沿台9線往市區方向或往西側高地撤離</li>
+                    <li>二龍村居民：沿宜5鄉道往南或往西方高地撤離</li>
                 </ul>
                 <p><strong>注意事項：</strong>溫泉區地震後可能有熱水溢流，請特別小心</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 礁溪國小設有物資儲備站，附近有礁溪衛生所可提供基本醫療，飯店資源豐富可提供臨時住宿
+                </div>
             </div>
             
             <div class="route-card">
                 <h3>羅東鎮</h3>
                 <p><strong>主要避難場所：</strong>羅東運動公園、羅東高中操場、羅東國中操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 全鎮平均海拔約7-12公尺，西側略高於東側
+                </div>
                 <p><strong>疏散路線：</strong></p>
                 <ul>
-                    <li>市區居民：就近前往羅東運動公園或學校操場</li>
+                    <li>市區居民：就近前往羅東運動公園（海拔約10公尺）或學校操場</li>
                     <li>北成里、成功里居民：沿北成路、純精路向西撤離至羅東運動公園</li>
-                    <li>東安里居民：沿復興路向西撤離至羅東國中</li>
+                    <li>東安里居民：沿復興路向西撤離至羅東國中（海拔約9公尺）</li>
                 </ul>
                 <p><strong>注意事項：</strong>避開羅東夜市商圈狹窄巷道，選擇寬敞道路撤離</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 羅東鎮物資資源豐富，羅東運動公園為主要物資集散地，羅東博愛醫院、聖母醫院可提供完善醫療服務
+                </div>
             </div>
             
             <div class="route-card">
                 <h3>蘇澳鎮</h3>
                 <p><strong>主要避難場所：</strong>蘇澳國中操場、蘇澳國小操場、武荖國小操場、南安國中操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 沿海地區平均海拔2-5公尺，內陸市區約10-20公尺，西側山區可達50公尺以上
+                </div>
                 <p><strong>沿海疏散路線：</strong></p>
                 <ul>
-                    <li>南方澳居民：立即往高處撤離，可沿豆腐岬登山步道或漁港路往北方高地撤離</li>
-                    <li>蘇南里、南強里居民：沿海邊路往內陸方向撤離至蘇澳國中</li>
-                    <li>港邊里居民：避開港區，沿台2線往內陸方向撤離</li>
+                    <li>南方澳居民：<strong>海嘯高風險區</strong>，立即往高處撤離，可沿豆腐岬登山步道（可達海拔30公尺以上）或漁港路往北方高地撤離</li>
+                    <li>蘇南里、南強里居民：沿海邊路往內陸方向撤離至蘇澳國中（海拔約15公尺）或往西側山區撤離</li>
+                    <li>港邊里居民：避開港區，沿台2線往內陸方向撤離至較高處</li>
                 </ul>
                 <p><strong>重要警告：</strong>南方澳漁港為高度海嘯風險區，請立即往高處撤離，不要停留在低窪地區</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 蘇澳區漁會、蘇澳國中設有物資儲備，蘇澳榮民醫院可提供醫療服務，但位置偏低，建議撤離至安全高地後再尋求醫療支援
+                </div>
             </div>
             
             <div class="route-card">
                 <h3>冬山鄉</h3>
                 <p><strong>主要避難場所：</strong>冬山國中操場、冬山國小操場、東興國小操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 鄉區平均海拔約5-15公尺，冬山河沿岸低漥處可能低於5公尺，西側較高
+                </div>
                 <p><strong>疏散路線：</strong></p>
                 <ul>
-                    <li>冬山市區居民：就近前往冬山國中或冬山國小操場</li>
-                    <li>丸山村居民：沿宜52鄉道往北撤離</li>
-                    <li>大進村、武淵村居民：沿宜29鄉道向西撤離，避開低窪地區</li>
+                    <li>冬山市區居民：就近前往冬山國中（海拔約12公尺）或冬山國小操場（海拔約10公尺）</li>
+                    <li>丸山村居民：沿宜52鄉道往北撤離至較高處</li>
+                    <li>大進村、武淵村居民：沿宜29鄉道向西撤離，避開冬山河低窪地區</li>
                 </ul>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 冬山鄉公所與冬山國中設有物資儲備站，醫療資源有限，可前往羅東或利澤附近醫療機構
+                </div>
+            </div>
+            
+            <div class="route-card">
+                <h3>五結鄉</h3>
+                <p><strong>主要避難場所：</strong>五結國中操場、五結國小操場、利澤國中操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 全鄉地勢低平，平均海拔約2-8公尺，沿海區域多低於5公尺，屬於<strong>高風險區</strong>
+                </div>
+                <p><strong>疏散路線：</strong></p>
+                <ul>
+                    <li>利澤村居民：沿台7線往西北方向撤離至利澤國中（海拔約6公尺），或往西側較高處撤離</li>
+                    <li>五結村、鎮安村居民：沿五結路往西撤離至五結國中（海拔約7公尺）</li>
+                    <li>季新村、協和村居民：沿季新路向西北方向撤離，避開低窪水田區域</li>
+                    <li>沿海區域居民：<strong>嚴重警告</strong>請立即往西移動至宜蘭市區或羅東鎮，不要停留在低窪地區</li>
+                </ul>
+                <p><strong>特別注意：</strong>五結鄉為蘭陽平原東側低窪地區，海嘯風險極高，請優先考慮往西側較高處撤離，不要只撤離至鄉內避難場所停留</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 五結鄉公所與利澤工業區有部分物資儲備，但地區資源有限，建議撤離至宜蘭市或羅東鎮等資源較豐富區域，醫療可前往利澤診所或羅東博愛醫院
+                </div>
+            </div>
+            
+            <div class="route-card">
+                <h3>三星鄉</h3>
+                <p><strong>主要避難場所：</strong>三星國中操場、三星國小操場、大洲國小操場</p>
+                <div class="altitude-info">
+                    <strong>地形海拔：</strong> 東側平均海拔約10-25公尺，西側山區可達50-200公尺，地勢自西向東傾斜
+                </div>
+                <p><strong>疏散路線：</strong></p>
+                <ul>
+                    <li>三星市區居民：就近前往三星國中（海拔約20公尺）或三星國小操場（海拔約18公尺）</li>
+                    <li>大洲村居民：沿大洲路往西方向撤離至大洲國小（海拔約15公尺）或更高處</li>
+                    <li>尚武村、天山村居民：沿宜30鄉道向西撤離至海拔較高處</li>
+                    <li>行健村、集慶村居民：沿台7線往西南方向高地移動</li>
+                </ul>
+                <p><strong>優勢：</strong>三星鄉西側地勢較高，相較其他沿海鄉鎮，海嘯風險較低，但仍應避開河川兩側低窪地區</p>
+                <div class="resource-info">
+                    <strong>資源取得：</strong> 三星鄉公所與農會設有物資儲備，三星衛生所可提供基本醫療服務，地區農特產資源豐富，可提供臨時食物需求
+                </div>
+            </div>
+        </div>
+        
+        <div class="resources-section">
+            <h2>宜蘭縣緊急物資資源分布</h2>
+            <p>地震發生後，取得飲水、食物與醫療資源至關重要。以下列出宜蘭縣主要緊急物資儲備點與醫療資源：</p>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <h4>主要物資儲備中心</h4>
+                    <ul>
+                        <li>宜蘭縣災害應變中心（宜蘭市）</li>
+                        <li>羅東運動公園避難收容所（羅東鎮）</li>
+                        <li>蘇澳鎮災害應變中心（蘇澳鎮）</li>
+                        <li>頭城鎮公所（頭城鎮）</li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>醫療資源</h4>
+                    <ul>
+                        <li>羅東博愛醫院（羅東鎮）- 重度級急救責任醫院</li>
+                        <li>陽明交通大學附設醫院（宜蘭市）</li>
+                        <li>聖母醫院（礁溪鄉/羅東鎮）</li>
+                        <li>蘇澳榮民醫院（蘇澳鎮）</li>
+                        <li>各鄉鎮衛生所</li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>飲用水資源</h4>
+                    <ul>
+                        <li>宜蘭地區湧泉：礁溪地區、冬山鄉、員山鄉有多處天然湧泉</li>
+                        <li>自來水公司緊急供水站（各鄉鎮）</li>
+                        <li>學校避難所設有緊急備用水塔</li>
+                    </ul>
+                </div>
+                <div class="resource-item">
+                    <h4>發電與通訊資源</h4>
+                    <ul>
+                        <li>宜蘭縣政府備用發電機組</li>
+                        <li>各鄉鎮市公所備有緊急發電設備</li>
+                        <li>電信業者行動通訊車（災後部署）</li>
+                        <li>警消無線電通訊網</li>
+                    </ul>
+                </div>
             </div>
         </div>
         
@@ -250,43 +464,10 @@
                 <li><strong>開車中：</strong>減速靠邊停車，避開橋梁、高架道路及電線桿，熄火後開啟車門打開車窗（避免車門變形被困），離開車輛到安全地點。</li>
                 <li><strong>避免電梯：</strong>使用樓梯撤離，不要搭乘電梯。</li>
                 <li><strong>準備緊急包：</strong>應含3日飲用水、乾糧、手電筒、收音機、備用電池、常用藥品、現金等。</li>
+                <li><strong>考慮海拔高度：</strong>沿海低窪地區居民應優先考慮往較高處撤離，至少往海拔30公尺以上區域移動。</li>
+                <li><strong>資源取得：</strong>確認就近的物資儲備點與醫療設施位置，可攜帶簡易淨水設備（如淨水錠）以備不時之需。</li>
             </ul>
         </div>
         
         <div class="emergency-contacts">
             <h2>緊急聯絡資訊</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h4>緊急報案</h4>
-                    <p>110</p>
-                </div>
-                <div class="contact-item">
-                    <h4>消防救護</h4>
-                    <p>119</p>
-                </div>
-                <div class="contact-item">
-                    <h4>宜蘭縣災害應變中心</h4>
-                    <p>03-9251000</p>
-                </div>
-                <div class="contact-item">
-                    <h4>宜蘭縣消防局</h4>
-                    <p>03-9324101</p>
-                </div>
-                <div class="contact-item">
-                    <h4>宜蘭縣警察局</h4>
-                    <p>03-9320900</p>
-                </div>
-                <div class="contact-item">
-                    <h4>宜蘭醫院</h4>
-                    <p>03-9325192</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
-        <p>本資訊由宜蘭縣政府災害防救辦公室提供 | 更新日期：2025年3月15日</p>
-        <p>若有疑問，請聯絡：03-9251000 #1234</p>
-    </footer>
-</body>
-</html>
